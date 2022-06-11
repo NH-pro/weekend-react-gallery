@@ -24,7 +24,7 @@ useEffect(() => {
       url: '/gallery'
     })
     .then((response) => {
-      console.log(`/gallery GET request SUCCESS`,response);
+      console.log(`/gallery GET request SUCCESS`,response.data);
       setGalleryList(response.data);
     })
     .catch((err) => {

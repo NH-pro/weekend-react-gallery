@@ -7,7 +7,6 @@ function GalleryList({galleryList}) {
                 <GalleryListItem
                     key={frogItem.id}
                     frogItem={frogItem}
-                    description={frogItem.description}
                 />
             ))};
         </>
