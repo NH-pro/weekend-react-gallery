@@ -39,7 +39,7 @@ useEffect(() => {
         </header>
         <p>Gallery goes here</p>
 
-        {/* GalleryList component */}
+        {/* Render GalleryList component */}
         <GalleryList
           galleryList = {galleryList}
 
