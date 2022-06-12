@@ -57,7 +57,12 @@ function App() {
       </header>
 
       <div className="gallery_box">
-        {/* Render GalleryList component */}
+        {/* - This is when we use all that data we fetched with our 'fetchGalleryList' GET request.
+            - We now render our 'GalleryList' component and add our "props" that we want to ship along
+                with it.
+            - The props we sending here are the current state of the array of data in 'galleryList'
+                and our 'addLike' PUT request.
+            - So now we head on over to GalleryList.jsx component (also known as javascript extension)*/}
         <GalleryList
           galleryList = {galleryList}
           addLike = {addLike}
