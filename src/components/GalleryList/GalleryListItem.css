@@ -1,6 +1,7 @@
 .frog_pic {
     width: 200px;
     height: 200px;
+    border: 1px solid black;
 }
 
 .frog_box {
@@ -9,4 +10,11 @@
     height: 270px;
     padding: 10px;
     flex-direction: column;
+    border: 1px solid black;
+}
+
+.frog_description {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
 }
