@@ -4,8 +4,6 @@ import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
 
-
-
 function App() {
 
 // useState manages the 'galleryList' change in state.
@@ -14,7 +12,7 @@ const [ galleryList, setGalleryList] = useState([]);
 // On App load, 'fetchGalleryList()' is executed.
 useEffect(() => {
   fetchGalleryList();
-});
+}, []);
 
   const fetchGalleryList = () => {
     console.log(`---In fetchGalleryList---`);
@@ -42,7 +40,6 @@ useEffect(() => {
         {/* Render GalleryList component */}
         <GalleryList
           galleryList = {galleryList}
-
         />
       </div>
     );
