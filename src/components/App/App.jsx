@@ -1,10 +1,10 @@
+// Import stuff
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
+import './App.css';
 
 function App() {
-
   // useState manages the 'galleryList' change in state.
   const [ galleryList, setGalleryList] = useState([]);
 
@@ -13,15 +13,16 @@ function App() {
     fetchGalleryList();
   }, []);
 
+  // GET request
   const fetchGalleryList = () => {
     console.log(`---In fetchGalleryList---`);
-
     axios({
       method: 'GET',
       url: '/gallery'
     })
     .then((response) => {
       console.log(`/gallery GET request SUCCESS`,response.data);
+      // changes the STATE of 'galleryList' with the 
       setGalleryList(response.data);
     })
     .catch((err) => {
@@ -29,6 +30,7 @@ function App() {
     })
   }
 
+  // PUT request
   const addLike = (frogID) => {
     axios({
       method: 'PUT',
@@ -45,13 +47,13 @@ function App() {
 
   return (
     <div className="App">
+
       <header className="App-header">
         <h1 className="App-title">Gallery of Frogs</h1>
       </header>
-      <p>Gallery goes here</p>
 
-      {/* Render GalleryList component */}
       <div className="gallery_box">
+        {/* Render GalleryList component */}
         <GalleryList
           galleryList = {galleryList}
           addLike = {addLike}
