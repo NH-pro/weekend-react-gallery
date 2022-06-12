@@ -22,7 +22,9 @@ function App() {
     })
     .then((response) => {
       console.log(`/gallery GET request SUCCESS`,response.data);
-      // changes the STATE of 'galleryList' with the 
+      // Changes the STATE of 'galleryList' with the array of objects from 'gallery.data.js'.
+      // We use '.data' at the end of our response, because axios sends us back an array with a bunch
+      //  of other info we don't care about. '.data' is literally the data/response we get back from the server. 
       setGalleryList(response.data);
     })
     .catch((err) => {
@@ -30,7 +32,7 @@ function App() {
     })
   }
 
-  // PUT request
+  // PUT request to update "image likes".
   const addLike = (frogID) => {
     axios({
       method: 'PUT',
