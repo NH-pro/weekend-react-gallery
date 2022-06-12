@@ -7,6 +7,10 @@ import GalleryListItem from './GalleryListItem';
 function GalleryList({galleryList, addLike}) {
     return (
         <>
+            {/* - So here, we want to .map through our 'galleryList' array and call each item 'frogItem'.
+                - Each 'frogItem' is going to render its own 'GalleryListItem' component.
+                - When we render this new component, we are also gonna send some more data over to it
+                    in the form of a couple of props. */}
             {galleryList.map((frogItem) => (
                 <GalleryListItem
                     key={frogItem.id}
