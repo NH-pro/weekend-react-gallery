@@ -1,4 +1,4 @@
-// Import stuff
+// Importing stuff.
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
@@ -62,7 +62,8 @@ function App() {
                 with it.
             - The props we sending here are the current state of the array of data in 'galleryList'
                 and our 'addLike' PUT request.
-            - So now we head on over to GalleryList.jsx component (also known as javascript extension)*/}
+            - So now we head on over to our GalleryList.jsx component (also known as javascript extension)
+                and see what we're rendering. */}
         <GalleryList
           galleryList = {galleryList}
           addLike = {addLike}
