@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 800px;
+  margin: 0 auto;
 }
 
 .App-header {
@@ -11,5 +13,12 @@
 
 .App-title {
   font-size: 1.5em;
+}
+
+.gallery_box {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
