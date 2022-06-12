@@ -5,16 +5,13 @@
 }
 
 .frog_box {
-    display: inline-flex;
     width: 200px;
     height: 270px;
-    padding: 10px;
-    flex-direction: column;
     border: 1px solid black;
 }
 
 .frog_description {
     border: 1px solid black;
-    height: 200px;
+    height: 170px;
     width: 200px;
 }

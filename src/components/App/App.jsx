@@ -52,10 +52,12 @@ function App() {
       <p>Gallery goes here</p>
 
       {/* Render GalleryList component */}
-      <GalleryList
-        galleryList = {galleryList}
-        addLike = {addLike}
-      />
+      <div className="gallery_box">
+        <GalleryList
+          galleryList = {galleryList}
+          addLike = {addLike}
+        />
+      </div>
     </div>
   );
 }
