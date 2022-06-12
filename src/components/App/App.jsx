@@ -1,4 +1,4 @@
-// Import stuff
+// Importing stuff.
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
