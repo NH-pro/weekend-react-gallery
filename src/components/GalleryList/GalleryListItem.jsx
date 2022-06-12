@@ -5,7 +5,6 @@ function GalleryListItem({frogItem}) {
         <>
             <div key={frogItem.id} className="frog_box">
                 <img className="frog_pic" src={frogItem.path}/>
-                <p>{frogItem.description}</p>
             </div>
         </>
     );

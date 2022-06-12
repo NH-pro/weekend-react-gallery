@@ -1,4 +1,10 @@
 .frog_pic {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+.frog_box {
+    display: inline-flex;
+    width: 210px;
+    height: 210px;
 }

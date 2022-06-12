@@ -8,7 +8,7 @@ function GalleryList({galleryList}) {
                     key={frogItem.id}
                     frogItem={frogItem}
                 />
-            ))};
+            ))}
         </>
     );
 };
