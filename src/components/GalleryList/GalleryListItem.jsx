@@ -1,14 +1,19 @@
 import './GalleryListItem.css'
 
 
+function GalleryListItem({frogItem, addLike}) {
 
-function GalleryListItem({frogItem}) {
+    const likeBtn = () => {
+        console.log(`--- In addLike ---`, frogItem.id);
+        addLike(frogItem.id);
+    };    
+
     return (
         <>
             <div key={frogItem.id} className="frog_box">
                 <img className="frog_pic" src={frogItem.path}/>
-                <button>Like</button>
-                <p>X people like this!</p>
+                <button onClick={likeBtn}>Like</button>
+                <p>{frogItem.likes} people like this!</p>
             </div>
         </>
     );

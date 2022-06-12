@@ -30,6 +30,20 @@ function App() {
     })
   }
 
+  const addLike = (frogID) => {
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${frogID}`
+    })
+    .then((response) => {
+        console.log(`PUT /gallery/like/${frogID} request SUCCESS!`);
+        fetchGalleryList();
+    })
+    .catch((err) => {
+        console.log(`PUT /gallery/like/${frogID} request FAILED!`, err);
+    })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -40,6 +54,7 @@ function App() {
       {/* Render GalleryList component */}
       <GalleryList
         galleryList = {galleryList}
+        addLike = {addLike}
       />
     </div>
   );
