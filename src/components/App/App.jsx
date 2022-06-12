@@ -6,13 +6,13 @@ import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
 
-// useState manages the 'galleryList' change in state.
-const [ galleryList, setGalleryList] = useState([]);
+  // useState manages the 'galleryList' change in state.
+  const [ galleryList, setGalleryList] = useState([]);
 
-// On App load, 'fetchGalleryList()' is executed.
-useEffect(() => {
-  fetchGalleryList();
-}, []);
+  // On App load, 'fetchGalleryList()' is executed.
+  useEffect(() => {
+    fetchGalleryList();
+  }, []);
 
   const fetchGalleryList = () => {
     console.log(`---In fetchGalleryList---`);
@@ -30,19 +30,19 @@ useEffect(() => {
     })
   }
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        <p>Gallery goes here</p>
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">Gallery of Frogs</h1>
+      </header>
+      <p>Gallery goes here</p>
 
-        {/* Render GalleryList component */}
-        <GalleryList
-          galleryList = {galleryList}
-        />
-      </div>
-    );
+      {/* Render GalleryList component */}
+      <GalleryList
+        galleryList = {galleryList}
+      />
+    </div>
+  );
 }
 
 export default App;
