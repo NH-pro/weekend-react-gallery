@@ -14,6 +14,8 @@ function App() {
   }, []);
 
   // GET request
+  // This is ONLY used to fetch our data from the server and 'save' it in our 'galleyList' variable.
+  // We do this so we can use that data in our App return --> GalleryList component.
   const fetchGalleryList = () => {
     console.log(`---In fetchGalleryList---`);
     axios({
