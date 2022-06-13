@@ -23,7 +23,7 @@ function GalleryListItem({frogItem, addLike}) {
                 {status ?
                     <img onClick={() => setStatus(false)} className="frog_pic" src={frogItem.path}/>
                     :
-                    <p className="frog_description" onClick={() => setStatus(true)}> {frogItem.description}</p>
+                    <p onClick={() => setStatus(true)} className="frog_description">{frogItem.description}</p>
                 }
                 {/* - Here is our "likes" button.
                     - When clicked, run the 'addLike' function with the id argument in App.jsx */}
