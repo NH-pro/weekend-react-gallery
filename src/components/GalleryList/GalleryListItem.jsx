@@ -9,7 +9,8 @@ function GalleryListItem({frogItem, addLike}) {
 
     // Here we are using useState to keep track of the true/false status that we are giving
     //  our rendered element below. It is going to be a toggle effect, so we're using a boolean here.
-    // We use it here because it doesn't need to persist. It only matters here.
+    // We use it here because it doesn't need to persist. It only matters here when it is dealing with
+    //  this particular item.
     const [status, setStatus] = useState(true);
 
     // In our first div, we could have added our 'onClick' functionality
