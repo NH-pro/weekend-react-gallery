@@ -6,9 +6,12 @@ import './App.css';
 
 function App() {
   // useState manages the 'galleryList' change in state.
+  // The default data type for useState is always going to be the type of data you're saving to it.
+  // In this case, an array. So we set it to an empty array.
+  // Any change in State rerenders App.
   const [ galleryList, setGalleryList] = useState([]);
 
-  // On App load, 'fetchGalleryList()' is executed.
+  // On page load, 'fetchGalleryList()' is executed.
   useEffect(() => {
     fetchGalleryList();
   }, []);
@@ -18,16 +21,17 @@ function App() {
   // We do this so we can use that data in our App return --> GalleryList component.
   const fetchGalleryList = () => {
     console.log(`---In fetchGalleryList---`);
+    // Shorthand syntax of axios.get('/gallery)
     axios({
       method: 'GET',
       url: '/gallery'
     })
-    .then((response) => {
-      console.log(`/gallery GET request SUCCESS`,response.data);
+    .then((res) => {
+      console.log(`/gallery GET request SUCCESS`,res.data);
       // Changes the STATE of 'galleryList' with the array of objects from 'gallery.data.js'.
       // We use '.data' at the end of our response, because axios sends us back an array with a bunch
       //  of other info we don't care about. '.data' is literally the data/response we get back from the server. 
-      setGalleryList(response.data);
+      setGalleryList(res.data);
     })
     .catch((err) => {
       console.log(`/gallery GET request FAILED`, err);
@@ -35,16 +39,18 @@ function App() {
   }
 
   // PUT request to update "image likes".
+  // 'addLike' function takes in a 'frogId' parameter.
+  // We give it the argument for this parameter in the 'likeBtn' function in 'GalleryListItem'.
   const addLike = (frogID) => {
     axios({
       method: 'PUT',
       url: `/gallery/like/${frogID}`
     })
-    .then((response) => {
+    .then(res => {
         console.log(`PUT /gallery/like/${frogID} request SUCCESS!`);
         fetchGalleryList();
     })
-    .catch((err) => {
+    .catch(err => {
         console.log(`PUT /gallery/like/${frogID} request FAILED!`, err);
     })
   }
