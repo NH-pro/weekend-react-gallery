@@ -39,16 +39,18 @@ function App() {
   }
 
   // PUT request to update "image likes".
+  // 'addLike' function takes in a 'frogId' parameter.
+  // We give it the argument for this parameter in the 'likeBtn' function in 'GalleryListItem'.
   const addLike = (frogID) => {
     axios({
       method: 'PUT',
       url: `/gallery/like/${frogID}`
     })
-    .then((response) => {
+    .then(res => {
         console.log(`PUT /gallery/like/${frogID} request SUCCESS!`);
         fetchGalleryList();
     })
-    .catch((err) => {
+    .catch(err => {
         console.log(`PUT /gallery/like/${frogID} request FAILED!`, err);
     })
   }

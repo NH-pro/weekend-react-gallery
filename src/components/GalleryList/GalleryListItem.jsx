@@ -9,27 +9,24 @@ function GalleryListItem({frogItem, addLike}) {
 
     // Here we are using useState to keep track of the true/false status that we are giving
     //  our rendered element below. It is going to be a toggle effect, so we're using a boolean here.
-    const [status, setStatus] = useState(false);
+    // We use it here because it doesn't need to persist. It only matters here.
+    const [status, setStatus] = useState(true);
 
-    // In our return below, we have a "like" button that when clicked, adds a "like" count.
-    // Here we are defining what happens when that button is clicked.
-    // Right now, the click event does logs the specfic id of the element and then executes
-    //  the 'addLike' function.
-    // The 'addLike' function is located in our App.jsx BECAUSE 
-    const likeBtn = () => {
-        console.log(`--- In addLike ---`, frogItem.id);
-        addLike(frogItem.id);
-    };    
-
+    // In our first div, we could have added our 'onClick' functionality
+    //  onClick ={() => setStatus(!status)}
+    // Just less to type out too.
     return (
-        <>
-            <div key={frogItem.id} className="frog_box">
+        <> 
+            <div key={frogItem.id} className="frog_box"> 
+                {/* Ternary operator for conditional rendering */}
                 {status ?
-                    <p className="frog_description" onClick={() => setStatus(false)}> {frogItem.description}</p>
+                    <img onClick={() => setStatus(false)} className="frog_pic" src={frogItem.path}/>
                     :
-                    <img onClick={() => setStatus(true)} className="frog_pic" src={frogItem.path}/>
+                    <p className="frog_description" onClick={() => setStatus(true)}> {frogItem.description}</p>
                 }
-                <button onClick={likeBtn}>Like</button>
+                {/* - Here is our "likes" button.
+                    - When clicked, run the 'addLike' function with the id argument in App.jsx */}
+                <button onClick= {() => addLike(frogItem.id)}>Like</button>
                 <p>{frogItem.likes} people like this!</p>
             </div>
         </>
