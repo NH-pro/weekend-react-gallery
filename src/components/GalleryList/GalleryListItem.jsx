@@ -11,7 +11,11 @@ function GalleryListItem({frogItem, addLike}) {
     //  our rendered element below. It is going to be a toggle effect, so we're using a boolean here.
     const [status, setStatus] = useState(false);
 
-    
+    // In our return below, we have a "like" button that when clicked, adds a "like" count.
+    // Here we are defining what happens when that button is clicked.
+    // Right now, the click event does logs the specfic id of the element and then executes
+    //  the 'addLike' function.
+    // The 'addLike' function is located in our App.jsx BECAUSE 
     const likeBtn = () => {
         console.log(`--- In addLike ---`, frogItem.id);
         addLike(frogItem.id);
