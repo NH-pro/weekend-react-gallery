@@ -16,8 +16,8 @@ function GalleryList({galleryList, addLike}) {
                     these can be seen in 'gallery.data.js'.
                 - Third prop, is our 'addLike' function from App.js that we use in our PUT request.
                 - So now we head on over to the 'GalleryListItem' compontent and see what it renders. */}
-            {galleryList.map((frogItem) => (
-                <GalleryListItem
+            {galleryList.map((frogItem) => ( // <-- You can use () or {} here. {} if you're returning.
+                <GalleryListItem             // In  this case, we are going to return in this other component.
                     key={frogItem.id}
                     frogItem={frogItem}
                     addLike={addLike}
